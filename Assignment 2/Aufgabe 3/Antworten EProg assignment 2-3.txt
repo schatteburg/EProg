@@ -1,0 +1,6 @@
+name			query
+buildings		query
+add_line		command
+connecting_lines	query
+move_all		command
+north			query
