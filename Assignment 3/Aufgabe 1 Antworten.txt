@@ -1,0 +1,3 @@
+A class is a category of things with certain properties, while objects are instances of these things.
+
+An analogy to relationship of class to object is Gruppe to Vertreter.

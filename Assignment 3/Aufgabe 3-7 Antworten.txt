@@ -1,0 +1,4 @@
+You don't have to define the width of the card during execution time.
+Additionally, if you want to change the width you only have to change the variable in the code instead of every time when it is used.
+
+To prevent a "messed up" business card for a name that is too long, you could include a contract in the beginning of print_card so that it requires names that are short enough.

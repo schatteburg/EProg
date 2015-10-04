@@ -1,0 +1,14 @@
+2.1	Zurich.line(5).kind.name
+	CITY.LINE.TRANSPORT_KIND.STRING
+	Returns a STRING
+	Answers the question "What kind of transportation is line 5?"
+
+2.2	Zurich.station("Hardplatz").position.length
+	CITY.STATION.VECTOR.REAL_64
+	Returns a REAL_64
+	Answers the question "How far away from the origin of the coordinate system is the station Hardplatz"
+
+2.3	Zurich.line(2).distance(Zurich.station("Bellevue"),Zurich.line(2).west_terminal)
+	CITY.LINE.REAL_64(CITY.STATION,CITY.LINE.STATION)
+	Returns a REAL_64
+	Answers the question "How far away is the station Bellevue from the terminal station at the western end of line 2?"
