@@ -1,0 +1,72 @@
+1
+	1:	c
+	2:	a
+	3:	b
+	4:	d
+	5:	c
+	6:	d,e
+	7:	a
+	8:	c,e
+	9:	b,e
+
+2
+	Listing 1: Version A
+
+	explore
+		-- Move "Central".
+	local
+		station: STATION
+	do
+		across
+			Zurich.stations as i
+		loop
+			-- corrected operator: ~ instead of =, because in Eiffel, strings are reference
+			-- types, so even if the name of the station is "Central", it is not the same 
+			-- object as the sting declared afterwards
+			if i.item.name ~ "Central" then
+				station := i.item
+			end
+			if station /= Void then
+				station.set_position ([0.0, 0.0])
+			end
+		end
+	end
+	-- It seems as if a copy of the station is being made and set to the city center, but actually
+	-- the station "station" is just a copy of the pointer, so that when the position of station
+	-- is changed, the position of Central is changed as well
+
+
+	Listing 2: Version B
+
+	explore
+		-- Move "Central".
+	local
+		i: like Zurich.stations.new cursor
+	do
+		from
+			i := Zurich.stations.new cursor
+		until
+			i.item.name ~ "Central" or i.after
+		loop
+		end
+		if not i.after then
+			i.item.set_position ([0.0, 0.0])
+		end
+	end
+	-- is correct I think
+
+4
+	DICE
+		can have a value from 1 to 6
+		can get a new value assigned (random) -> throw
+		not too interesting atm, but could be expanded in different versions of the game
+
+	PLAYER
+		attributes: name, current field, position (first, last, etc), position of turn in the round
+		actions: throwing dices, moving to another field
+
+	BOARD
+		attributes: number of fields, first, last
+
+	FIELD
+		attributes: occupied, next field
