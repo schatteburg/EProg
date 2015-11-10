@@ -1,0 +1,13 @@
+1
+1.1
+	Compiles and says: "Thor is now a level 2 warrior."
+1.2
+	Does not compile because class HERO is deferred, so no direct instance of it can be generated.
+1.3
+	Does not compile, do_action in class WARRIOR was renamed to attack.
+1.4
+	Compiles and says: "Diana is now a level 2 healer."
+1.5
+	does not compile because do_action in classes WARRIOR and HEALER was renamed.
+1.6
+	Compiles and says: "Thor attacks Thor. Does 10 damage."
