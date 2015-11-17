@@ -1,0 +1,20 @@
+1
+1.1
+	Version 1:	Does what it's supposed to do, also with circular lists.
+			However, the "infecting person" is gets flu last, unless it is the coworker
+			of somebody else that will be reached by the coworker relation.
+
+	Version 2:	Does what it's supposed to do, but only in non-circular lists. This is because
+			before giving flu to the infecting person or it's coworker, it tries to infect
+			the coworker.
+
+	Version 3:	Partly works, with a non-recursive definition. However, for circular lists, the
+			loop will not terminate.
+
+	Version 4:	Does what it's supposed to do, in the most elegant way (infected person gets
+			flu and then infects its coworker).
+
+1.2
+	Mit
+		coworkers: LIST[PERSON]
+	und set_flu, dann über coworkers iteriert erst p.set_flu und dann infect(p.coworkers)
